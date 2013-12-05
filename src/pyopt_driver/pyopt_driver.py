@@ -285,7 +285,7 @@ class pyOptDriver(Driver):
             obj = self.list_objective_targets()
             con = self.list_constraint_targets()
 
-            J = self.workflow.calc_gradient(inputs, obj + con)
+            J = self.workflow.calc_gradient(inputs, obj + con, mode="fd")
 
             nobj = len(obj)
             df = J[0:nobj, :]
